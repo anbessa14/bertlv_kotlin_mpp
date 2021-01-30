@@ -98,7 +98,41 @@ dependencies {
     }
 ```
 
+## iOS
 
+### Example 
+```
+  let berTlv = BerTlv();
+        
+        //Add Multiple Tags
+        do{
+            try berTlv.addTags(hexString: "8A01000C050101010101")
+        } catch{
+            print("error adding tags")
+        }
+        
+        
+        //Update Tag
+        let tag8A = berTlv.tag(tagName:"8A");
+        tag8A!.setStringValue(string: "Hello World")
+
+          //Add Tag
+        let newTag = Tag(tagHex: "9F02", valueHex: "0A1105")
+        berTlv.addTag(tag: newTag)
+
+          //Delete Tag
+          berTlv.deleteTag(tagName:"0C")
+
+
+        print("Tag List: ", berTlv.tags)
+          //Tag List: {8A=8A0B48656C6C6F20576F726C64, 9F02=9F02030A1105}
+          print("Tags: $berTlv")
+          //Tags: 8A0B48656C6C6F20576F726C649F02030A1105
+        print("Tag ", tag8A?.name,  ": ",  tag8A)
+          //Tag 8A: 8A0B48656C6C6F20576F726C64
+        print("Tag "  ,tag8A?.name ," value: ",  tag8A?.stringValue())
+          //Tag 8A value: Hello World
+```
 
 ## Version History
 
