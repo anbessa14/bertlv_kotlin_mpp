@@ -30,11 +30,40 @@ kotlin {
     }
 
     js(LEGACY){
+        nodejs {
+        }
         browser {
+            webpackTask {
+                outputFileName = "bertlv.js"
+                output.libraryTarget = "bertlv"
+            }
             testTask {
                 useKarma {
                     useChromeHeadless()
                     webpackConfig.cssSupport.enabled = true
+                }
+            }
+            binaries.executable()
+        }
+        macosX64("bertlv-mac64") {
+            binaries {
+                framework {
+                    baseName = "bertlv-mac64"
+                }
+            }
+        }
+        iosArm64("bertlv-ios64"){
+            binaries {
+                framework {
+                    baseName = "bertlv-ios"
+                }
+            }
+        }
+
+        iosX64("bertlv-iosEmulator"){
+            binaries{
+                framework{
+                    baseName = "bertlv-iosEmulator"
                 }
             }
         }
