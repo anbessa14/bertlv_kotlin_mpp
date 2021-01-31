@@ -12,6 +12,7 @@ Library is used to work with ASN.1 BER-TLV structures and available in Kotlin, J
 ## Availability
 * [Kotlin](##Kotlin)
 * [Java](##Java)
+* [swift](##swift)
 * Javascript
 * Native
 
@@ -98,7 +99,7 @@ dependencies {
     }
 ```
 
-## iOS
+## swift
 
 ### Example 
 ```
