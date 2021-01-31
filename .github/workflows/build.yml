@@ -45,5 +45,5 @@ jobs:
         - name: Archive artifacts
           uses: actions/upload-artifact@v2
           with:
-            name: libraries
-            path: build/libs/
+            name: ios-libraries
+            path: build/bin/
