@@ -35,7 +35,6 @@ kotlin {
         browser {
             webpackTask {
                 outputFileName = "bertlv.js"
-                output.libraryTarget = "bertlv"
             }
             testTask {
                 useKarma {
@@ -45,6 +44,7 @@ kotlin {
             }
             binaries.executable()
         }
+    }
         macosX64("bertlv-mac64") {
             binaries {
                 framework {
@@ -67,7 +67,7 @@ kotlin {
                 }
             }
         }
-    }
+
 
 
     val hostOs = System.getProperty("os.name")
